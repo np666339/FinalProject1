@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "FinalProject",
-    "slug": "FinalProject",
+    "slug": "FinalProject-np666339",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -9,7 +9,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#Ffc0cb"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
