@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import * as WebBrowser from 'expo-web-browser';
+import Button from './Button';
 import Controller from './Images/Controller.png';
 import * as SplashScreen from 'expo-splash-screen';
 
@@ -23,17 +25,23 @@ function HomeScreen({ navigation }) {
         onChangeText={newText => setVGames(newText)}
         multiline={true}
       />
-      <Text> </Text>
+        <Text> </Text>
       <TouchableOpacity style={styles.button}
         onPress={() => navigation.navigate('Game Catalog', {VGames})}>
         <Text style={styles.buttonText}> View List </Text>
        </TouchableOpacity>
+       <Text> </Text>
+      <Button info style={styles.button}
+        onPress={() => WebBrowser.openBrowserAsync('https://www.gamestop.com')}
+      >
+        <Text style={styles.buttonText}>Buy More Games!</Text>
+        </Button>
        <Image source={Controller} />
     </View>
   );
 }
 
-function GameScreen({route}) {
+function GameScreen({route, navigation}) {
 
   const { VGames } = route.params;
   return (
@@ -41,6 +49,7 @@ function GameScreen({route}) {
       <Text style={styles.header}>Video Game List</Text>
 
       <Text style={styles.subhead}> Catalog: </Text>
+      <Text></Text>
       <Text style={styles.games}> {VGames} </Text>
       <Text style={{paddingTop: 600}}>  </Text>
     </View>
